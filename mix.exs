@@ -58,7 +58,9 @@ defmodule Dulce.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      {:elixir_auth_google, "~> 1.6.9"},
+      {:dotenv, "~> 3.0.0", only: [:dev, :test]}
     ]
   end
 

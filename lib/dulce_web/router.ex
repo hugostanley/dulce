@@ -21,6 +21,7 @@ defmodule DulceWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/auth/google/callback", GoogleAuthController, :index
   end
 
   # Other scopes may use custom stacks.

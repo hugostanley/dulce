@@ -52,8 +52,8 @@ defmodule DulceWeb.Router do
 
     live_session :redirect_if_user_is_authenticated,
       on_mount: [{DulceWeb.UserAuth, :redirect_if_user_is_authenticated}] do
-      live "/users/register", UserRegistrationLive, :new
-      live "/users/log_in", UserLoginLive, :new
+      live "/signup", UserRegistrationLive, :new
+      live "/login", UserLoginLive, :new
       live "/users/reset_password", UserForgotPasswordLive, :new
       live "/users/reset_password/:token", UserResetPasswordLive, :edit
     end

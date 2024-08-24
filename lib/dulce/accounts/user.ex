@@ -1,4 +1,6 @@
 defmodule Dulce.Accounts.User do
+  alias Dulce.UsersWorkspaces.UserWorkspace
+  alias Dulce.Workspaces.Workspace
   use Ecto.Schema
   import Ecto.Changeset
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -11,6 +13,9 @@ defmodule Dulce.Accounts.User do
     field :hashed_password, :string, redact: true
     field :current_password, :string, virtual: true, redact: true
     field :confirmed_at, :utc_datetime
+
+    has_many :owned_workspaces, Workspace, foreign_key: :owner_id
+    many_to_many :workspaces, Workspace, join_through: UserWorkspace
 
     timestamps(type: :utc_datetime)
   end
